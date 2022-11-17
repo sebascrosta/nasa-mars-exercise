@@ -11,14 +11,13 @@ export default class Navbar extends Component {
   
   handleFilter(e){
     e.preventDefault();
-    console.log(this, 'handlefilter')
-    
     if (this.filterSol && this.filterEarthDay){
       alert("You can't filter by Earth Day and Martian Sol at the same time, please delete one of the filters");
       return;
     }
-    this.props.updateFilters(this.filterRover, this.filterCamera, this.filterSol, this.filterEarthDay);
-    
+
+    const { filterRover, filterCamera, filterSol, filterEarthDay } = this
+    this.props.updateFilters(filterRover, filterCamera, filterSol, filterEarthDay);
   }
 
   render() {
@@ -32,6 +31,7 @@ export default class Navbar extends Component {
               type="text"
               placeholder="Curiosity"
               value={this.state.filterRover}
+              required
               onChange={(e)=> this.filterRover = e.target.value}/></label>
           <label>
             Choose a Camera

@@ -1,4 +1,4 @@
-div{
+.mars-photo{
   display: inline-grid;
   margin: 10px;
 }
@@ -9,5 +9,5 @@ img{
 }
 
 form{
-  margin-left: 10px;
+  margin-left: 40px;
 }

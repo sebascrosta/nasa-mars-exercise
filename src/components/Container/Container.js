@@ -11,7 +11,7 @@ export default class Container extends Component {
 
     this.state = {
       nasa: [],
-      filters:{}
+      filters:{},
     }
 
     this.updateFilters = this.updateFilters.bind(this);
@@ -20,16 +20,15 @@ export default class Container extends Component {
   updateFilters(rover, camera, sol, earthDay){
     const appliedFilters = {'rover' : rover, 'camera': camera, 'sol' :sol, 'earth':earthDay}; 
     this.setState({filters : appliedFilters});
-    console.log(this.state, 'llega algo acá')
   }
   
   componentDidMount(){
     const fotos = getPhotos({});
-    console.log(fotos, 'fotos')
     this.setState({nasa : fotos})
+    console.log(this.state.nasa, 'nasa')
   }
 
-
+// toDo: add Load More button component, which will add the parameter "page"
   render() {
     return(
       <div className='container'>

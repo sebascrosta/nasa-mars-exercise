@@ -31,13 +31,10 @@ export default class Gallery extends Component {
 
   render() {
     if(this.state.nasa.latest_photos){
-      console.log(this.props.photos, 'props fotos')
-      const info = this.state.nasa.latest_photos.slice(0,25);
-
       return <div className="mars-wrapper">{
-      info.map((item,i) => <MarsPhoto img_src = {item.img_src}
-          rover = {item.rover.name}
-          camera = {item.camera.full_name}
+      this.props.photos.slice(0,25).map((item,i) => <MarsPhoto img_src = {item.img_src}
+          rover = {item.rover}
+          camera = {item.camera}
           key = {i} />)
       }
           </div>

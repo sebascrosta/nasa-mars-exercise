@@ -5,9 +5,7 @@ import Container from '../Container/Container';
 function App() {
 
   return (
-    <div className='wrapper'>
       <Container />
-    </div>
   );
 }
 
